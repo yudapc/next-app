@@ -14,7 +14,11 @@ app.prepare().then(() => {
   })
 
   server.get('/posts/:id', (req, res) => {
-    return app.render(req, res, '/posts', { id: req.params.id })
+    return app.render(req, res, '/posts/detail', { id: req.params.id })
+  })
+
+  server.get('/posts/:id/edit', (req, res) => {
+    return app.render(req, res, '/posts/edit', { id: req.params.id })
   })
 
   server.all('*', (req, res) => {

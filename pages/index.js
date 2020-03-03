@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link'
 
 const Home = () => (
   <div className="container">
@@ -17,6 +18,27 @@ const Home = () => (
       </p>
 
       <div className="grid">
+        <a href="https://nextjs.org/docs" className="card">
+          <h3>Pages &rarr;</h3>
+          <ul>
+            <li>
+              <Link href="/about">
+                <a>About Us</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/posts/1">
+                <a>Post</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/material">
+                <a>Material</a>
+              </Link>
+            </li>
+          </ul>
+        </a>
+
         <a href="https://nextjs.org/docs" className="card">
           <h3>Documentation &rarr;</h3>
           <p>Find in-depth information about Next.js features and API.</p>
@@ -165,7 +187,7 @@ const Home = () => (
         border-color: #0070f3;
       }
 
-      .card h3 {
+      rcard h3 {
         margin: 0 0 1rem 0;
         font-size: 1.5rem;
       }

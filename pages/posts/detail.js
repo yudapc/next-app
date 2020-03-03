@@ -1,9 +1,8 @@
-import Head from 'next/head'
 import fetch from 'isomorphic-unfetch'
 
 const API_URL = 'https://private-cf0fb-yudacogati.apiary-mock.com/sample/items/'
 
-const Posts = (article) => {
+const PostsDetail = (article) => {
   return (
     <div>
       <h1>My blog post #{article.id}</h1>
@@ -14,7 +13,7 @@ const Posts = (article) => {
   );
 }
 
-Posts.getInitialProps = async ({ query }) => {
+PostsDetail.getInitialProps = async ({ query }) => {
   const id = query.id
   const res = await fetch(API_URL + id, {
     headers: {
@@ -27,4 +26,4 @@ Posts.getInitialProps = async ({ query }) => {
   return json.data
 }
 
-export default Posts
+export default PostsDetail
