@@ -2,8 +2,8 @@ import Head from 'next/head'
 import fetch from 'isomorphic-unfetch'
 import fetchClient from 'unfetch'
 import useSWR from 'swr'
-
 const API_URL = 'https://api.github.com'
+
 
 async function fetcher(path) {
   const res = await fetchClient(API_URL + path)
@@ -38,7 +38,7 @@ const About = ({ forks }) => {
 }
 
 About.getInitialProps = async () => {
-  const res = await fetch('https://api.github.com/repos/zeit/next.js')
+  const res = await fetch(API_URL + '/repos/zeit/next.js')
   const json = await res.json()
   return { forks: json.forks }
 }
